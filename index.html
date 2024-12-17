@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+</head>
+
+<body>
+    <h3>Pizza preparation and order</h3>
+    <button onclick="fun()">click here</button>
+    <script>
+        
+       let para=document.createElement("P")
+       setTimeout(() => {
+        
+           para.innerHTML="<b>click here</b> and open console to see the output"
+       }, 2000);
+       document.body.append(para)
+
+        function fun(){
+        function step1(callback){
+            callback()            
+            setTimeout(() => {
+                 console.log("Pizza order")
+            }, 3000); 
+        }
+
+        function step2(callback){
+            callback()
+            setTimeout(() => {
+                 console.log("prepare pizza")
+            }, 4000);
+        }
+
+        function step3(callback){
+            callback()
+        setTimeout(() => {
+             console.log("bake pizza")   
+        }, 6000);
+        }
+
+        function step4(callback){
+            callback()
+            setTimeout(() => {
+             console.log("pack pizza")   
+        }, 7000);
+        }
+
+        function step5(){
+            setTimeout(() => {
+                console.log("deliver pizza")  
+            },8000);
+
+        }
+
+        step1(()=>{
+            step2(()=>{
+                step3(()=>{
+                    step4(()=>{
+                        step5()
+                    })
+                })
+            })
+        })
+    }
+    
+    </script>
+</body>
+</html>
+
+
